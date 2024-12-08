@@ -1,0 +1,1806 @@
+{
+  "contractName": "WorkbenchBase",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "applicationName",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "workflowName",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "applicationName",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "workflowName",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "originatingAddress",
+          "type": "address"
+        }
+      ],
+      "name": "WorkbenchContractCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "applicationName",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "workflowName",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "action",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "originatingAddress",
+          "type": "address"
+        }
+      ],
+      "name": "WorkbenchContractUpdated",
+      "type": "event"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"applicationName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"workflowName\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"applicationName\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"workflowName\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"originatingAddress\",\"type\":\"address\"}],\"name\":\"WorkbenchContractCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"applicationName\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"workflowName\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"action\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"originatingAddress\",\"type\":\"address\"}],\"name\":\"WorkbenchContractUpdated\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/WorkbenchBase.sol\":\"WorkbenchBase\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/WorkbenchBase.sol\":{\"keccak256\":\"0x3ab5a2b9d1bc3e771b29a5c1e5f68cca1c2219fe8af9b39a2c553710079144c7\",\"urls\":[\"bzz-raw://5885621faccef2ecc4b679e1dd3bf5b1d57b13c2436199e0c3c5d1abce385ec2\",\"dweb:/ipfs/QmfZehqf6PQSoBPnBsvGvzfrWBEkZ5kkuUR53qjAaAbur4\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.16;\r\n\r\ncontract WorkbenchBase {\r\n    event WorkbenchContractCreated(string applicationName, string workflowName, address originatingAddress);\r\n    event WorkbenchContractUpdated(string applicationName, string workflowName, string action, address originatingAddress);\r\n\r\n    string internal ApplicationName;\r\n    string internal WorkflowName;\r\n\r\n    // Mengganti nama fungsi konstruktor menjadi `constructor`\r\n    constructor(string memory applicationName, string memory workflowName) internal {\r\n        ApplicationName = applicationName;\r\n        WorkflowName = workflowName;\r\n    }\r\n\r\n    function ContractCreated() internal {\r\n        emit WorkbenchContractCreated(ApplicationName, WorkflowName, msg.sender);\r\n    }\r\n\r\n    function ContractUpdated(string memory action) internal {\r\n        emit WorkbenchContractUpdated(ApplicationName, WorkflowName, action, msg.sender);\r\n    }\r\n}\r\n",
+  "sourcePath": "G:\\Users\\acer\\Documents\\6833 MUHAMAD ABILA NURRODIN\\KULIAH\\SMT 5\\BLOCKCHAIN\\week 11\\contracts\\WorkbenchBase.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/WorkbenchBase.sol",
+    "exportedSymbols": {
+      "WorkbenchBase": [
+        464
+      ]
+    },
+    "id": 465,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 400,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 464,
+        "linearizedBaseContracts": [
+          464
+        ],
+        "name": "WorkbenchBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 408,
+            "name": "WorkbenchContractCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 407,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 402,
+                  "indexed": false,
+                  "name": "applicationName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 408,
+                  "src": "89:22:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 401,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "89:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 404,
+                  "indexed": false,
+                  "name": "workflowName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 408,
+                  "src": "113:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 403,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "113:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 406,
+                  "indexed": false,
+                  "name": "originatingAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 408,
+                  "src": "134:26:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 405,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "134:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "88:73:3"
+            },
+            "src": "58:104:3"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 418,
+            "name": "WorkbenchContractUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 417,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 410,
+                  "indexed": false,
+                  "name": "applicationName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 418,
+                  "src": "199:22:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 409,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "199:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 412,
+                  "indexed": false,
+                  "name": "workflowName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 418,
+                  "src": "223:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 411,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "223:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 414,
+                  "indexed": false,
+                  "name": "action",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 418,
+                  "src": "244:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 413,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "244:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 416,
+                  "indexed": false,
+                  "name": "originatingAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 418,
+                  "src": "259:26:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 415,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "259:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "198:88:3"
+            },
+            "src": "168:119:3"
+          },
+          {
+            "constant": false,
+            "id": 420,
+            "name": "ApplicationName",
+            "nodeType": "VariableDeclaration",
+            "scope": 464,
+            "src": "295:31:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 419,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "295:6:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 422,
+            "name": "WorkflowName",
+            "nodeType": "VariableDeclaration",
+            "scope": 464,
+            "src": "333:28:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 421,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "333:6:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 437,
+              "nodeType": "Block",
+              "src": "514:90:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 431,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 429,
+                      "name": "ApplicationName",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 420,
+                      "src": "525:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 430,
+                      "name": "applicationName",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 424,
+                      "src": "543:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "525:33:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 432,
+                  "nodeType": "ExpressionStatement",
+                  "src": "525:33:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 435,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 433,
+                      "name": "WorkflowName",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 422,
+                      "src": "569:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 434,
+                      "name": "workflowName",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 426,
+                      "src": "584:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "569:27:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 436,
+                  "nodeType": "ExpressionStatement",
+                  "src": "569:27:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 438,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 427,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 424,
+                  "name": "applicationName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 438,
+                  "src": "446:29:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 423,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "446:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 426,
+                  "name": "workflowName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 438,
+                  "src": "477:26:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 425,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "477:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "445:59:3"
+            },
+            "returnParameters": {
+              "id": 428,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "514:0:3"
+            },
+            "scope": 464,
+            "src": "434:170:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 448,
+              "nodeType": "Block",
+              "src": "648:91:3",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 442,
+                        "name": "ApplicationName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 420,
+                        "src": "689:15:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 443,
+                        "name": "WorkflowName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 422,
+                        "src": "706:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 444,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 479,
+                          "src": "720:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 445,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "720:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 441,
+                      "name": "WorkbenchContractCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 408,
+                      "src": "664:24:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_address_$returns$__$",
+                        "typeString": "function (string memory,string memory,address)"
+                      }
+                    },
+                    "id": 446,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "664:67:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 447,
+                  "nodeType": "EmitStatement",
+                  "src": "659:72:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 449,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ContractCreated",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 439,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "636:2:3"
+            },
+            "returnParameters": {
+              "id": 440,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "648:0:3"
+            },
+            "scope": 464,
+            "src": "612:127:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 462,
+              "nodeType": "Block",
+              "src": "803:99:3",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 455,
+                        "name": "ApplicationName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 420,
+                        "src": "844:15:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 456,
+                        "name": "WorkflowName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 422,
+                        "src": "861:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 457,
+                        "name": "action",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 451,
+                        "src": "875:6:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 458,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 479,
+                          "src": "883:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 459,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "883:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 454,
+                      "name": "WorkbenchContractUpdated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 418,
+                      "src": "819:24:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_address_$returns$__$",
+                        "typeString": "function (string memory,string memory,string memory,address)"
+                      }
+                    },
+                    "id": 460,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "819:75:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 461,
+                  "nodeType": "EmitStatement",
+                  "src": "814:80:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 463,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ContractUpdated",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 452,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 451,
+                  "name": "action",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 463,
+                  "src": "772:20:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 450,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "772:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "771:22:3"
+            },
+            "returnParameters": {
+              "id": 453,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "803:0:3"
+            },
+            "scope": 464,
+            "src": "747:155:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 465,
+        "src": "28:877:3"
+      }
+    ],
+    "src": "0:907:3"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/WorkbenchBase.sol",
+      "exportedSymbols": {
+        "WorkbenchBase": [
+          464
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".16"
+          ]
+        },
+        "id": 400,
+        "name": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            464
+          ],
+          "name": "WorkbenchBase",
+          "scope": 465
+        },
+        "children": [
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "WorkbenchContractCreated"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "applicationName",
+                      "scope": 408,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 401,
+                        "name": "ElementaryTypeName",
+                        "src": "89:6:3"
+                      }
+                    ],
+                    "id": 402,
+                    "name": "VariableDeclaration",
+                    "src": "89:22:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "workflowName",
+                      "scope": 408,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 403,
+                        "name": "ElementaryTypeName",
+                        "src": "113:6:3"
+                      }
+                    ],
+                    "id": 404,
+                    "name": "VariableDeclaration",
+                    "src": "113:19:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "originatingAddress",
+                      "scope": 408,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 405,
+                        "name": "ElementaryTypeName",
+                        "src": "134:7:3"
+                      }
+                    ],
+                    "id": 406,
+                    "name": "VariableDeclaration",
+                    "src": "134:26:3"
+                  }
+                ],
+                "id": 407,
+                "name": "ParameterList",
+                "src": "88:73:3"
+              }
+            ],
+            "id": 408,
+            "name": "EventDefinition",
+            "src": "58:104:3"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "WorkbenchContractUpdated"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "applicationName",
+                      "scope": 418,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 409,
+                        "name": "ElementaryTypeName",
+                        "src": "199:6:3"
+                      }
+                    ],
+                    "id": 410,
+                    "name": "VariableDeclaration",
+                    "src": "199:22:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "workflowName",
+                      "scope": 418,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 411,
+                        "name": "ElementaryTypeName",
+                        "src": "223:6:3"
+                      }
+                    ],
+                    "id": 412,
+                    "name": "VariableDeclaration",
+                    "src": "223:19:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "action",
+                      "scope": 418,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 413,
+                        "name": "ElementaryTypeName",
+                        "src": "244:6:3"
+                      }
+                    ],
+                    "id": 414,
+                    "name": "VariableDeclaration",
+                    "src": "244:13:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "originatingAddress",
+                      "scope": 418,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 415,
+                        "name": "ElementaryTypeName",
+                        "src": "259:7:3"
+                      }
+                    ],
+                    "id": 416,
+                    "name": "VariableDeclaration",
+                    "src": "259:26:3"
+                  }
+                ],
+                "id": 417,
+                "name": "ParameterList",
+                "src": "198:88:3"
+              }
+            ],
+            "id": 418,
+            "name": "EventDefinition",
+            "src": "168:119:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "ApplicationName",
+              "scope": 464,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string"
+                },
+                "id": 419,
+                "name": "ElementaryTypeName",
+                "src": "295:6:3"
+              }
+            ],
+            "id": 420,
+            "name": "VariableDeclaration",
+            "src": "295:31:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "WorkflowName",
+              "scope": 464,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string"
+                },
+                "id": 421,
+                "name": "ElementaryTypeName",
+                "src": "333:6:3"
+              }
+            ],
+            "id": 422,
+            "name": "VariableDeclaration",
+            "src": "333:28:3"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 464,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "applicationName",
+                      "scope": 438,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 423,
+                        "name": "ElementaryTypeName",
+                        "src": "446:6:3"
+                      }
+                    ],
+                    "id": 424,
+                    "name": "VariableDeclaration",
+                    "src": "446:29:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "workflowName",
+                      "scope": 438,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 425,
+                        "name": "ElementaryTypeName",
+                        "src": "477:6:3"
+                      }
+                    ],
+                    "id": 426,
+                    "name": "VariableDeclaration",
+                    "src": "477:26:3"
+                  }
+                ],
+                "id": 427,
+                "name": "ParameterList",
+                "src": "445:59:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 428,
+                "name": "ParameterList",
+                "src": "514:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 420,
+                              "type": "string storage ref",
+                              "value": "ApplicationName"
+                            },
+                            "id": 429,
+                            "name": "Identifier",
+                            "src": "525:15:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 424,
+                              "type": "string memory",
+                              "value": "applicationName"
+                            },
+                            "id": 430,
+                            "name": "Identifier",
+                            "src": "543:15:3"
+                          }
+                        ],
+                        "id": 431,
+                        "name": "Assignment",
+                        "src": "525:33:3"
+                      }
+                    ],
+                    "id": 432,
+                    "name": "ExpressionStatement",
+                    "src": "525:33:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 422,
+                              "type": "string storage ref",
+                              "value": "WorkflowName"
+                            },
+                            "id": 433,
+                            "name": "Identifier",
+                            "src": "569:12:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 426,
+                              "type": "string memory",
+                              "value": "workflowName"
+                            },
+                            "id": 434,
+                            "name": "Identifier",
+                            "src": "584:12:3"
+                          }
+                        ],
+                        "id": 435,
+                        "name": "Assignment",
+                        "src": "569:27:3"
+                      }
+                    ],
+                    "id": 436,
+                    "name": "ExpressionStatement",
+                    "src": "569:27:3"
+                  }
+                ],
+                "id": 437,
+                "name": "Block",
+                "src": "514:90:3"
+              }
+            ],
+            "id": 438,
+            "name": "FunctionDefinition",
+            "src": "434:170:3"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "ContractCreated",
+              "scope": 464,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 439,
+                "name": "ParameterList",
+                "src": "636:2:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 440,
+                "name": "ParameterList",
+                "src": "648:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_string_storage",
+                                  "typeString": "string storage ref"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_storage",
+                                  "typeString": "string storage ref"
+                                },
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 408,
+                              "type": "function (string memory,string memory,address)",
+                              "value": "WorkbenchContractCreated"
+                            },
+                            "id": 441,
+                            "name": "Identifier",
+                            "src": "664:24:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 420,
+                              "type": "string storage ref",
+                              "value": "ApplicationName"
+                            },
+                            "id": 442,
+                            "name": "Identifier",
+                            "src": "689:15:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 422,
+                              "type": "string storage ref",
+                              "value": "WorkflowName"
+                            },
+                            "id": 443,
+                            "name": "Identifier",
+                            "src": "706:12:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 479,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 444,
+                                "name": "Identifier",
+                                "src": "720:3:3"
+                              }
+                            ],
+                            "id": 445,
+                            "name": "MemberAccess",
+                            "src": "720:10:3"
+                          }
+                        ],
+                        "id": 446,
+                        "name": "FunctionCall",
+                        "src": "664:67:3"
+                      }
+                    ],
+                    "id": 447,
+                    "name": "EmitStatement",
+                    "src": "659:72:3"
+                  }
+                ],
+                "id": 448,
+                "name": "Block",
+                "src": "648:91:3"
+              }
+            ],
+            "id": 449,
+            "name": "FunctionDefinition",
+            "src": "612:127:3"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "ContractUpdated",
+              "scope": 464,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "action",
+                      "scope": 463,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 450,
+                        "name": "ElementaryTypeName",
+                        "src": "772:6:3"
+                      }
+                    ],
+                    "id": 451,
+                    "name": "VariableDeclaration",
+                    "src": "772:20:3"
+                  }
+                ],
+                "id": 452,
+                "name": "ParameterList",
+                "src": "771:22:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 453,
+                "name": "ParameterList",
+                "src": "803:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_string_storage",
+                                  "typeString": "string storage ref"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_storage",
+                                  "typeString": "string storage ref"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                },
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 418,
+                              "type": "function (string memory,string memory,string memory,address)",
+                              "value": "WorkbenchContractUpdated"
+                            },
+                            "id": 454,
+                            "name": "Identifier",
+                            "src": "819:24:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 420,
+                              "type": "string storage ref",
+                              "value": "ApplicationName"
+                            },
+                            "id": 455,
+                            "name": "Identifier",
+                            "src": "844:15:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 422,
+                              "type": "string storage ref",
+                              "value": "WorkflowName"
+                            },
+                            "id": 456,
+                            "name": "Identifier",
+                            "src": "861:12:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 451,
+                              "type": "string memory",
+                              "value": "action"
+                            },
+                            "id": 457,
+                            "name": "Identifier",
+                            "src": "875:6:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 479,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 458,
+                                "name": "Identifier",
+                                "src": "883:3:3"
+                              }
+                            ],
+                            "id": 459,
+                            "name": "MemberAccess",
+                            "src": "883:10:3"
+                          }
+                        ],
+                        "id": 460,
+                        "name": "FunctionCall",
+                        "src": "819:75:3"
+                      }
+                    ],
+                    "id": 461,
+                    "name": "EmitStatement",
+                    "src": "814:80:3"
+                  }
+                ],
+                "id": 462,
+                "name": "Block",
+                "src": "803:99:3"
+              }
+            ],
+            "id": 463,
+            "name": "FunctionDefinition",
+            "src": "747:155:3"
+          }
+        ],
+        "id": 464,
+        "name": "ContractDefinition",
+        "src": "28:877:3"
+      }
+    ],
+    "id": 465,
+    "name": "SourceUnit",
+    "src": "0:907:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-11-02T14:40:42.023Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
